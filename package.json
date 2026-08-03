@@ -1,0 +1,18 @@
+{
+  "name": "sunshine-solar-solutions",
+  "version": "1.0.0",
+  "description": "Sunshine Solar Solutions website with product spec catalog and interactive solar calculator",
+  "main": "index.html",
+  "scripts": {
+    "dev": "powershell -ExecutionPolicy Bypass -File ./serve.ps1",
+    "start": "powershell -ExecutionPolicy Bypass -File ./serve.ps1"
+  },
+  "keywords": [
+    "solar",
+    "solar-street-light",
+    "clean-energy",
+    "solar-calculator"
+  ],
+  "author": "Sunshine Solar Solutions",
+  "license": "MIT"
+}
