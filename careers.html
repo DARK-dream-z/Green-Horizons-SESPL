@@ -43,16 +43,28 @@
         <img src="assets/Logo GH.png" alt="Green Horizons Logo" class="brand-logo-img">
         <div class="brand-name">GREEN <span>HORIZONS</span></div>
       </a>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <ul class="nav-links">
         <li><a href="index.html#home" class="nav-link">Home</a></li>
-        <li><a href="index.html#products" class="nav-link">Products</a></li>
-        <li><a href="index.html#projects-state" class="nav-link">Projects</a></li>
-        <li><a href="index.html#calculator" class="nav-link">Solar Calculator</a></li>
         <li><a href="index.html#about" class="nav-link">About Us</a></li>
-        <li><a href="careers.html" class="nav-link active">Careers</a></li>
-        <li><a href="index.html#contact" class="nav-link">Contact Us</a></li>
+        <li><a href="index.html#projects-state" class="nav-link">Projects</a></li>
+        <li><a href="index.html#products" class="nav-link">Products</a></li>
+        <li><a href="index.html#calculator" class="nav-link">Solar Calculator</a></li>
+        <li class="nav-dropdown">
+          <a href="index.html#contact" class="nav-link dropdown-trigger active">Contact Us <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="careers.html" class="active">Careers</a></li>
+          </ul>
+        </li>
       </ul>
-      <button class="btn-primary" onclick="window.location.href='index.html#contact'">
+      <button class="btn-primary nav-cta" onclick="window.location.href='index.html#contact'">
         <i class="fas fa-file-signature"></i> Get Free Quote
       </button>
     </div>
