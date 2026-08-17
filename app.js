@@ -1,147 +1,8 @@
 // Sunshine Solar Solutions - Application Logic & Interactive Features
 
-const productsData = [
-  {
-    id: "aisl-15w",
-    code: "AISL33100115ML/MP",
-    sub: "All In One Solar Street Light - 15W 1900 Lumens",
-    category: "street-lights",
-    desc: "The AISL33100115ML/MP system comes with inbuilt Lithium Ion or Lithium Ferro Phosphate battery pack, a 15W LED giving a 1900 lumen output and a 40W Solar Panel. System comes along with a mounting bracket compatible with most standard poles allowing for easier installation.",
-    image: "assets/solar_street_light.png",
-    pills: ["15W LED", "2000 Lumens", "40W Solar Panel", "LiFePO4 Battery", "IP65/IP66"],
-    specs: {
-      "LUMINARY": "15W",
-      "LUMENS": "2000",
-      "SOLAR PANEL": "40W",
-      "BATTERY PACK": "Li Ion/LiFePO4",
-      "SOLAR CHARGING TIME": "6 hours",
-      "LIGHTING TIME": "2 nights",
-      "WATERPROOF": "IP65/IP66",
-      "MATERIAL": "Aluminum Alloy",
-      "WORKING TEMPERATURE": "-25 C to 65 C",
-      "LED WORKING LIFE": "More than 50,000 hours",
-      "LED CHIP": "15W (15 x 1W)",
-      "WARRANTY": "2 years system",
-      "WARRANTY_NOTE": "Extended warranty options available on request",
-      "MOTION SENSOR (PIR)": "YES",
-      "MODE": "33% Brightness Run Mode, 100% PIR Mode"
-    },
-    bullets: [
-      "Operating Mode: Dusk to dawn",
-      "33% brightness Run Mode",
-      "100% brightness on PIR detection (motion sensor)",
-      "Customized options also available as per customer requirements"
-    ]
-  },
-  {
-    id: "aisl-30w",
-    code: "AISL66200230ML/MP",
-    sub: "All In One Solar Street Light - 30W 3800 Lumens",
-    category: "street-lights",
-    desc: "Commercial grade high illumination integrated solar light system with mono-crystalline photovoltaic array, MPPT smart charge controller, and intelligent dusk-to-dawn motion sensing.",
-    image: "assets/solar_street_light.png",
-    pills: ["30W LED", "3800 Lumens", "80W Solar Panel", "LiFePO4", "IP66"],
-    specs: {
-      "LUMINARY": "30W",
-      "LUMENS": "3800",
-      "SOLAR PANEL": "80W Mono",
-      "BATTERY PACK": "LiFePO4 3.2V 40Ah",
-      "SOLAR CHARGING TIME": "5.5 hours",
-      "LIGHTING TIME": "3 nights continuous",
-      "WATERPROOF": "IP66 Weatherproof",
-      "MATERIAL": "Heavy Duty Die-Cast Aluminum",
-      "WORKING TEMPERATURE": "-20 C to 70 C",
-      "LED WORKING LIFE": "60,000+ hours",
-      "LED CHIP": "High Efficiency Osram 30W",
-      "WARRANTY": "3 years full system",
-      "WARRANTY_NOTE": "Extended warranty options available on request",
-      "MOTION SENSOR (PIR)": "YES (Radar Sensor)",
-      "MODE": "30% Eco Mode + 100% Motion Boost"
-    },
-    bullets: [
-      "High density Monocrystalline solar cells",
-      "Auto Dusk-to-Dawn switching",
-      "Fast charging LiFePO4 battery pack",
-      "Includes heavy duty pole mounting bracket"
-    ]
-  },
-  {
-    id: "roof-5kw",
-    code: "SS-GRID-5KW",
-    sub: "5kW Solar Rooftop Power Plant - On-Grid",
-    category: "power-plants",
-    desc: "Complete high-efficiency residential rooftop solar solution including Mono-PERC bifacial solar panels, grid-tie string inverter, bi-directional net meter compatibility, and smart cloud monitoring app.",
-    image: "assets/solar_rooftop.png",
-    pills: ["5 kWp System", "Mono-PERC 540W", "Net Meter Ready", "App Monitoring"],
-    specs: {
-      "SYSTEM CAPACITY": "5 kWp",
-      "SOLAR PANELS": "10 x 540W Mono-PERC Bifacial",
-      "INVERTER": "5kW Grid-Tie IP65 Inverter",
-      "DAILY GENERATION": "20 - 24 Units / Day",
-      "SPACE REQUIRED": "350 - 400 Sq. Ft.",
-      "MONITORING": "WiFi + Cloud Mobile App",
-      "WARRANTY": "25 Years Panel / 8 Years Inverter",
-      "WARRANTY_NOTE": "Extended warranty options available on request",
-      "PAYBACK PERIOD": "3.2 Years Average"
-    },
-    bullets: [
-      "Substantial reduction in monthly electricity bills",
-      "Government subsidy support assistance",
-      "25-year linear power warranty on solar panels",
-      "Zero maintenance brushless design"
-    ]
-  },
-  {
-    id: "swh-300l",
-    code: "SS-SWH-300LPD",
-    sub: "Solar Water Heater - 300 LPD Vacuum Tube",
-    category: "water-heaters",
-    desc: "Commercial and residential solar hot water heater with high performance glass evacuated tubes and inner tank coated with food-grade stainless steel for longevity.",
-    image: "assets/solar_water_heater.png",
-    pills: ["300 Liters/Day", "30 Vacuum Tubes", "SS-304 Inner Tank", "PUF Insulation"],
-    specs: {
-      "CAPACITY": "300 LPD (Liters Per Day)",
-      "TUBE TYPE": "Evacuated Glass Vacuum Tubes",
-      "NUMBER OF TUBES": "30 Triple Layer Tubes",
-      "INNER TANK": "Food Grade SS-304L",
-      "INSULATION": "50mm High Density PUF",
-      "MAX TEMP": "85 C Hot Water Output",
-      "WARRANTY": "5 Years Comprehensive"
-      ,"WARRANTY_NOTE": "Extended warranty options available on request"
-    },
-    bullets: [
-      "Heats water even on partially cloudy days",
-      "Corrosion-resistant stainless steel frame",
-      "Saves up to 1500 units of electricity annually",
-      "Heavy duty pressure tested tank"
-    ]
-  },
-  {
-    id: "swp-5hp",
-    code: "SS-SWP-5HP",
-    sub: "Solar Water Pumping System - 5HP Submersible",
-    category: "solar-pumps",
-    desc: "High discharge solar powered water pump for agriculture irrigation and borewell extraction. Features MPPT VFD controller with dry run protection.",
-    image: "assets/solar_water_pump.png",
-    pills: ["5 HP Motor", "MPPT VFD Drive", "1,20,000 L/Day", "Borewell Ready"],
-    specs: {
-      "PUMP CAPACITY": "5 HP AC/DC Submersible",
-      "SOLAR ARRAY": "4.8 kWp High Efficiency Array",
-      "MAX HEAD": "100 Meters Depth",
-      "CONTROLLER": "IP65 MPPT Variable Frequency Drive",
-      "DISCHARGE": "Up to 1,20,000 Liters / Day",
-      "PROTECTION": "Overload & Dry Run Sensor",
-      "WARRANTY": "5 Years System / 25 Yrs Panel"
-      ,"WARRANTY_NOTE": "Extended warranty options available on request"
-    },
-    bullets: [
-      "Ideal for remote agricultural fields without grid power",
-      "Automatic start and stop based on solar intensity",
-      "Durable stainless steel pump impellers",
-      "Government MNRE scheme compliant"
-    ]
-  }
-];
+// Products will be loaded from admin localStorage at initialization
+let productsData = [];
+let categoriesData = [];
 
 // State Variables
 let currentFilter = 'all';
@@ -206,24 +67,129 @@ class FormHandler {
   }
 }
 
+// Default products for initial load (if admin hasn't added any)
+const DEFAULT_PRODUCTS = [
+  {
+    id: 'aisl-15w',
+    code: 'AISL33100115ML/MP',
+    sub: 'All In One Solar Street Light - 15W 1900 Lumens',
+    category: 'street-lights',
+    status: 'New',
+    desc: 'High-efficiency streetlight with built-in LiFePO4 battery and 40W panel.',
+    image: 'assets/solar_street_light.png',
+    pills: ['15W LED', '2000 Lumens', '40W Solar Panel', 'LiFePO4 Battery']
+  },
+  {
+    id: 'roof-5kw',
+    code: 'SS-GRID-5KW',
+    sub: '5kW Solar Rooftop Power Plant - On-Grid',
+    category: 'power-plants',
+    status: 'Offer',
+    desc: 'Complete rooftop plant with net meter compatibility and cloud monitoring.',
+    image: 'assets/solar_rooftop.png',
+    pills: ['5 kWp System', 'Net Meter Ready', 'App Monitoring']
+  }
+];
+
+const DEFAULT_CATEGORIES = [
+  { id: 'street-lights', name: 'Solar Street Lights' },
+  { id: 'power-plants', name: 'Solar Rooftop' },
+  { id: 'water-heaters', name: 'Solar Water Heaters' },
+  { id: 'solar-pumps', name: 'Solar Pumps' }
+];
+
+function syncAdminProductsIntoSite() {
+  try {
+    const adminProductsKey = 'gh_admin_products';
+    let storedProducts = JSON.parse(localStorage.getItem(adminProductsKey) || '[]');
+    
+    // If no products in localStorage, initialize with defaults
+    if (!Array.isArray(storedProducts) || !storedProducts.length) {
+      localStorage.setItem(adminProductsKey, JSON.stringify(DEFAULT_PRODUCTS));
+      storedProducts = DEFAULT_PRODUCTS;
+    }
+    
+    productsData.splice(0, productsData.length, ...storedProducts);
+  } catch (error) {
+    console.warn('Could not sync admin products:', error);
+  }
+}
+
+function syncAdminCategoriesIntoSite() {
+  try {
+    const adminCategoriesKey = 'gh_admin_categories';
+    let storedCategories = JSON.parse(localStorage.getItem(adminCategoriesKey) || '[]');
+    
+    // If no categories in localStorage, initialize with defaults
+    if (!Array.isArray(storedCategories) || !storedCategories.length) {
+      localStorage.setItem(adminCategoriesKey, JSON.stringify(DEFAULT_CATEGORIES));
+      storedCategories = DEFAULT_CATEGORIES;
+    }
+    
+    categoriesData.splice(0, categoriesData.length, ...storedCategories);
+  } catch (error) {
+    console.warn('Could not sync admin categories:', error);
+  }
+}
+
+function renderCategoryTabs() {
+  const tabContainer = document.querySelector('.category-tabs');
+  if (!tabContainer) return;
+
+  const tabs = [
+    { id: 'all', label: 'All Products' },
+    ...categoriesData.map(cat => ({ id: cat.id, label: cat.name }))
+  ];
+
+  tabContainer.innerHTML = tabs.map(tab => 
+    `<button class="tab-btn ${tab.id === 'all' ? 'active' : ''}" data-filter="${tab.id}">${tab.label}</button>`
+  ).join('');
+
+  // Re-attach event listeners
+  setupFilterTabs();
+}
+
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
+  syncAdminCategoriesIntoSite();
+  syncAdminProductsIntoSite();
+  renderCategoryTabs();
   renderProducts();
-  setupFilterTabs();
   setupCalculator();
   setupModalEvents();
   initCarousel();
   initCounterAnimation();
   setupScrollSpy();
+  initScrollReveal();
+  attachClickRipples();
   setupContactForm();
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   // instantiate global form handler
   window._formHandler = new FormHandler();
-      // initialize testimonials and state projects
-      initTestimonials();
-      renderStateProjects();
-      setupStateShowcase();
-    initHeaderCarousel();
-      initSectionAnimations();
+  initTestimonials();
+  renderStateProjects();
+  setupStateShowcase();
+  initHeaderCarousel();
+  initSectionAnimations();
 });
 
   // Testimonials data & video slider
@@ -568,6 +534,40 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(s => { s.classList.add('animate-fade'); observer.observe(s); });
   }
 
+  function initScrollReveal() {
+    const items = document.querySelectorAll('.animate-card, .hero-card, .about-feature-card, .project-card, .testimonial-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+
+    items.forEach(item => {
+      item.classList.add('animate-card-hidden');
+      observer.observe(item);
+    });
+  }
+
+  function attachClickRipples() {
+    const rippleTargets = document.querySelectorAll('.btn-primary, .btn-gold, .btn-view-details, .tab-btn, .nav-link, .product-card');
+    rippleTargets.forEach(el => {
+      el.addEventListener('pointerdown', createRipple);
+    });
+  }
+
+  function createRipple(event) {
+    const target = event.currentTarget;
+    const rect = target.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    ripple.style.left = `${event.clientX - rect.left}px`;
+    ripple.style.top = `${event.clientY - rect.top}px`;
+    target.appendChild(ripple);
+    window.setTimeout(() => ripple.remove(), 600);
+  }
+
 // Render Products Grid
 function renderProducts() {
   const grid = document.getElementById('productGrid');
@@ -577,10 +577,13 @@ function renderProducts() {
     ? productsData 
     : productsData.filter(p => p.category === currentFilter);
 
-  grid.innerHTML = filtered.map(p => `
-    <div class="product-card" data-id="${p.id}">
+  grid.innerHTML = filtered.map(p => {
+    const statusBadge = p.status && p.status !== 'blank' ? `<span class="status-badge status-${getStatusClass(p.status)}">${p.status}</span>` : '';
+    return `
+    <div class="product-card animate-card" data-id="${p.id}">
       <div class="card-img-wrapper">
         <span class="category-tag">${getCategoryName(p.category)}</span>
+        ${statusBadge}
         <img src="${p.image}" alt="${p.code}" />
       </div>
       <div class="card-body">
@@ -600,17 +603,26 @@ function renderProducts() {
         </div>
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 }
 
-function getCategoryName(cat) {
-  switch(cat) {
-    case 'street-lights': return 'Solar Street Light';
-    case 'power-plants': return 'Solar Rooftop';
-    case 'water-heaters': return 'Water Heater';
-    case 'solar-pumps': return 'Solar Pump';
-    default: return 'Solar Solution';
-  }
+function getCategoryName(catId) {
+  const category = categoriesData.find(c => c.id === catId);
+  return category ? category.name : 'Solar Solution';
+}
+
+function getStatusClass(status) {
+  const map = {
+    'New': 'new',
+    'Offer': 'offer',
+    'Popular': 'popular',
+    'Best Seller': 'best-seller',
+    'Discontinued': 'discontinued',
+    'Coming Soon': 'coming-soon',
+    'blank': ''
+  };
+  return map[status] || 'new';
 }
 
 // Category Tabs Interaction
@@ -824,14 +836,93 @@ function setupScrollSpy() {
 // Contact Section Form Handling
 function setupContactForm() {
   const contactForm = document.getElementById('contactSectionForm');
+  const warrantyToggle = document.getElementById('warrantyClaimToggle');
+  const warrantyFields = document.getElementById('warrantyClaimFields');
+  const warrantyMessage = document.getElementById('warrantyValidationMessage');
+  const warrantyInputs = [
+    document.getElementById('warrantyHologramNo'),
+    document.getElementById('warrantyPurchaseDate'),
+    document.getElementById('warrantyIssue')
+  ];
+
+  function setWarrantyMessage(message, type = 'error') {
+    if (!warrantyMessage) return;
+    warrantyMessage.textContent = message;
+    warrantyMessage.className = `form-message ${type}`;
+    warrantyMessage.hidden = !message;
+  }
+
+  function isPurchaseWithinWarrantyWindow(value) {
+    if (!value) return false;
+
+    const purchaseDate = new Date(value);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    if (Number.isNaN(purchaseDate.getTime())) return false;
+    if (purchaseDate > today) return false;
+
+    const oneYearAgo = new Date(today);
+    oneYearAgo.setFullYear(today.getFullYear() - 1);
+
+    return purchaseDate >= oneYearAgo && purchaseDate <= today;
+  }
+
+  function toggleWarrantyFields() {
+    const isVisible = Boolean(warrantyToggle && warrantyToggle.checked);
+    if (warrantyFields) {
+      warrantyFields.hidden = !isVisible;
+    }
+
+    warrantyInputs.forEach((input) => {
+      if (!input) return;
+      input.required = isVisible;
+      input.disabled = !isVisible;
+      if (!isVisible) {
+        input.value = '';
+      }
+    });
+
+    if (!isVisible) {
+      setWarrantyMessage('');
+    }
+  }
+
+  if (warrantyToggle) {
+    warrantyToggle.addEventListener('change', toggleWarrantyFields);
+    toggleWarrantyFields();
+  }
+
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      if (warrantyToggle && warrantyToggle.checked) {
+        const missing = warrantyInputs.filter((input) => input && !input.value.trim());
+        if (missing.length) {
+          const firstMissing = missing[0];
+          firstMissing.focus();
+          firstMissing.reportValidity();
+          setWarrantyMessage('Please complete all warranty claim details before submitting the claim.');
+          return;
+        }
+
+        const purchaseDateInput = document.getElementById('warrantyPurchaseDate');
+        if (purchaseDateInput && !isPurchaseWithinWarrantyWindow(purchaseDateInput.value)) {
+          purchaseDateInput.focus();
+          setWarrantyMessage('This product warranty period has ended. Warranty claims are accepted only within 12 months from the purchase date.');
+          return;
+        }
+
+        setWarrantyMessage('Warranty claim is valid and ready to submit.', 'success');
+      }
+
       const extra = { source: 'contactSection' };
       await window._formHandler.handleSubmit(contactForm, extra);
       const name = document.getElementById('cName')?.value || 'Valued Customer';
       alert(`Thank you, ${name}! Your message has been received by Green Horizons. Our technical team will reach out to you within 24 hours.`);
       contactForm.reset();
+      toggleWarrantyFields();
     });
   }
 }
