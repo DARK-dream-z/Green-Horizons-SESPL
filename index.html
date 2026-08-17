@@ -48,16 +48,28 @@
         <img src="assets/Logo GH.png" alt="Green Horizons Logo" class="brand-logo-img">
         <div class="brand-name">GREEN <span>HORIZONS</span></div>
       </a>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <ul class="nav-links">
         <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#products" class="nav-link">Products</a></li>
-        <li><a href="#projects-state" class="nav-link">Projects</a></li>
-        <li><a href="#calculator" class="nav-link">Solar Calculator</a></li>
         <li><a href="#about" class="nav-link">About Us</a></li>
-        <li><a href="careers.html" class="nav-link">Careers</a></li>
-        <li><a href="#contact" class="nav-link">Contact Us</a></li>
+        <li><a href="#projects-state" class="nav-link">Projects</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#calculator" class="nav-link">Solar Calculator</a></li>
+        <li class="nav-dropdown">
+          <a href="#contact" class="nav-link dropdown-trigger">Contact Us <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </li>
       </ul>
-      <button class="btn-primary" onclick="openEnquiryModal('General Quote')">
+      <button class="btn-primary nav-cta" onclick="openEnquiryModal('General Quote')">
         <i class="fas fa-file-signature"></i> Get Free Quote
       </button>
     </div>
@@ -149,6 +161,107 @@
     </div>
   </section>
 
+  <!-- About Us Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <span class="subtitle-badge">Who We Are</span>
+          <h2 class="section-title">Our Capability, Promise & Quality Standards</h2>
+          <p class="section-desc" style="text-align:left; margin-bottom:16px;">
+            Green Horizons is a premier renewable energy technology company dedicated to delivering ultra-efficient solar street lighting, rooftop solar power systems, and agricultural solar pumping solutions across India.
+          </p>
+          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:20px;">
+            With over a decade of engineering expertise and official MNRE approval, we design turnkey clean energy systems that dramatically lower carbon footprints while optimizing energy cost savings for residential, commercial, and industrial clients.
+          </p>
+          
+          <div class="about-features">
+            <div class="about-feature-card">
+              <i class="fas fa-solar-panel"></i>
+              <h4>Tier-1 Photovoltaics</h4>
+              <p>High-efficiency mono-PERC and bifacial solar panel technologies.</p>
+            </div>
+            <div class="about-feature-card">
+              <i class="fas fa-shield-alt"></i>
+              <h4>25-Year Performance</h4>
+              <p>Guaranteed long-term energy generation with robust warranties.</p>
+            </div>
+            <div class="about-feature-card">
+              <i class="fas fa-tools"></i>
+              <h4>Turnkey Installation</h4>
+              <p>End-to-end site survey, engineering, net-metering, and commissioning.</p>
+            </div>
+            <div class="about-feature-card">
+              <i class="fas fa-headset"></i>
+              <h4>24/7 Operations</h4>
+              <p>Smart cloud monitoring and rapid field service maintenance support.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <h3 style="color:#fff; font-size:1.6rem; margin-bottom:12px;">Why Choose Green Horizons?</h3>
+          <p style="color:#cbd5e1; font-size:0.92rem;">Empowering over 500+ successful installations with industry-leading standards.</p>
+
+          <div class="about-badge-list">
+            <div class="about-badge-item">
+              <i class="fas fa-award"></i>
+              <div>
+                <h5>MNRE & ISO Certified</h5>
+                <p>Govt-approved specifications for high reliability</p>
+              </div>
+            </div>
+            <div class="about-badge-item">
+              <i class="fas fa-leaf"></i>
+              <div>
+                <h5>Zero Emissions Focus</h5>
+                <p>Over 10,000+ tons of CO2 offset annually</p>
+              </div>
+            </div>
+            <div class="about-badge-item">
+              <i class="fas fa-hand-holding-usd"></i>
+              <div>
+                <h5>High ROI & Fast Payback</h5>
+                <p>Average investment payback in under 3.5 years</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- State-wise Projects Showcase (featured after About Us) -->
+  <section class="section" id="projects-state">
+    <div class="container">
+      <div class="section-header">
+        <span class="subtitle-badge">Regional Impact</span>
+        <h2 class="section-title">Our Completed Projects</h2>
+        <p class="section-desc">Explore selected installations across states. These projects reflect our execution strength, field experience, and consistent quality delivery.</p>
+      </div>
+
+      <div class="state-showcase">
+        <div class="state-list" id="stateList">
+          <!-- Buttons injected by JS -->
+        </div>
+
+        <div class="state-display-area">
+          <div class="state-display" id="stateDisplay">
+            <div class="state-display-label" id="stateDisplayLabel">All Projects</div>
+          </div>
+
+          <div class="floating-map" id="floatingMap">
+            <!-- clickable dots injected here -->
+          </div>
+        </div>
+      </div>
+
+      <div class="projects-grid" id="stateProjectsGrid">
+        <!-- JS populated -->
+      </div>
+    </div>
+  </section>
+
   <!-- Product Catalog Section -->
   <section class="section" id="products">
     <div class="container">
@@ -232,76 +345,6 @@
     </div>
   </section>
 
-  <!-- About Us Section -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div>
-          <span class="subtitle-badge">Who We Are</span>
-          <h2 class="section-title">Pioneering Sustainable Energy Solutions for Tomorrow</h2>
-          <p class="section-desc" style="text-align:left; margin-bottom:16px;">
-            Green Horizons is a premier renewable energy technology company dedicated to delivering ultra-efficient solar street lighting, rooftop solar power systems, and agricultural solar pumping solutions across India.
-          </p>
-          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:20px;">
-            With over a decade of engineering expertise and official MNRE approval, we design turnkey clean energy systems that dramatically lower carbon footprints while optimizing energy cost savings for residential, commercial, and industrial clients.
-          </p>
-          
-          <div class="about-features">
-            <div class="about-feature-card">
-              <i class="fas fa-solar-panel"></i>
-              <h4>Tier-1 Photovoltaics</h4>
-              <p>High-efficiency mono-PERC and bifacial solar panel technologies.</p>
-            </div>
-            <div class="about-feature-card">
-              <i class="fas fa-shield-alt"></i>
-              <h4>25-Year Performance</h4>
-              <p>Guaranteed long-term energy generation with robust warranties.</p>
-            </div>
-            <div class="about-feature-card">
-              <i class="fas fa-tools"></i>
-              <h4>Turnkey Installation</h4>
-              <p>End-to-end site survey, engineering, net-metering, and commissioning.</p>
-            </div>
-            <div class="about-feature-card">
-              <i class="fas fa-headset"></i>
-              <h4>24/7 Operations</h4>
-              <p>Smart cloud monitoring and rapid field service maintenance support.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-visual">
-          <h3 style="color:#fff; font-size:1.6rem; margin-bottom:12px;">Why Choose Green Horizons?</h3>
-          <p style="color:#cbd5e1; font-size:0.92rem;">Empowering over 500+ successful installations with industry-leading standards.</p>
-
-          <div class="about-badge-list">
-            <div class="about-badge-item">
-              <i class="fas fa-award"></i>
-              <div>
-                <h5>MNRE & ISO Certified</h5>
-                <p>Govt-approved specifications for high reliability</p>
-              </div>
-            </div>
-            <div class="about-badge-item">
-              <i class="fas fa-leaf"></i>
-              <div>
-                <h5>Zero Emissions Focus</h5>
-                <p>Over 10,000+ tons of CO2 offset annually</p>
-              </div>
-            </div>
-            <div class="about-badge-item">
-              <i class="fas fa-hand-holding-usd"></i>
-              <div>
-                <h5>High ROI & Fast Payback</h5>
-                <p>Average investment payback in under 3.5 years</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Vision & Mission -->
   <section class="section" id="vision">
     <div class="container">
@@ -368,37 +411,6 @@
           <h3>How a 5kW rooftop plant cut electricity bills</h3>
           <p>See the end-to-end project: site survey, installation, commissioning and monitoring.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- State-wise Projects Showcase (recreated) -->
-  <section class="section" id="projects-state">
-    <div class="container">
-      <div class="section-header">
-        <span class="subtitle-badge">Regional Impact</span>
-        <h2 class="section-title">State-wise Project Showcase</h2>
-        <p class="section-desc">Explore selected installs across states. Click a state to view projects and preview the state image.</p>
-      </div>
-
-      <div class="state-showcase">
-        <div class="state-list" id="stateList">
-          <!-- Buttons injected by JS -->
-        </div>
-
-        <div class="state-display-area">
-          <div class="state-display" id="stateDisplay">
-            <div class="state-display-label" id="stateDisplayLabel">All Projects</div>
-          </div>
-
-          <div class="floating-map" id="floatingMap">
-            <!-- clickable dots injected here -->
-          </div>
-        </div>
-      </div>
-
-      <div class="projects-grid" id="stateProjectsGrid">
-        <!-- JS populated -->
       </div>
     </div>
   </section>
@@ -548,6 +560,33 @@
               <div class="form-group">
                 <label for="cEmail">Email Address</label>
                 <input type="email" id="cEmail" class="form-control" placeholder="name@example.com">
+              </div>
+
+              <div class="form-group warranty-claim-toggle">
+                <label class="checkbox-label" for="warrantyClaimToggle">
+                  <input type="checkbox" id="warrantyClaimToggle" name="warrantyClaim">
+                  <span>Warranty Claim</span>
+                </label>
+              </div>
+
+              <div id="warrantyClaimFields" class="warranty-claim-fields" hidden>
+                <div class="form-group">
+                  <label for="warrantyHologramNo">Hologram No <span class="required-star">*</span></label>
+                  <input type="text" id="warrantyHologramNo" name="warrantyHologramNo" class="form-control" placeholder="Enter hologram number">
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="warrantyPurchaseDate">Purchase Date <span class="required-star">*</span></label>
+                    <input type="date" id="warrantyPurchaseDate" name="warrantyPurchaseDate" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="warrantyIssue">Issue <span class="required-star">*</span></label>
+                    <textarea id="warrantyIssue" name="warrantyIssue" class="form-control" rows="3" placeholder="Describe the issue"></textarea>
+                  </div>
+                </div>
+
+                <div id="warrantyValidationMessage" class="form-message" role="alert" hidden></div>
               </div>
 
               <div class="form-group">
