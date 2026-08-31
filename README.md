@@ -1,6 +1,6 @@
-# GH-SESPL
+# Sunshine Solar Solutions
 
-Sunshine Solar Solutions — static site for Green Horizons Solar Solutions.
+Sunshine Solar Solutions — static site for Swastik Enterprises Solar Pvt. Ltd.
 
 Includes homepage, assets, and client-side JS for interactive features (carousel, state showcase, forms with client-side encryption placeholder).
 
