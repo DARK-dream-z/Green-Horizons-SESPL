@@ -920,7 +920,7 @@ function setupContactForm() {
       const extra = { source: 'contactSection' };
       await window._formHandler.handleSubmit(contactForm, extra);
       const name = document.getElementById('cName')?.value || 'Valued Customer';
-      alert(`Thank you, ${name}! Your message has been received by Green Horizons. Our technical team will reach out to you within 24 hours.`);
+      alert(`Thank you, ${name}! Your message has been received by Swastik Enterprises Solar Pvt. Ltd. Our technical team will reach out to you within 24 hours.`);
       contactForm.reset();
       toggleWarrantyFields();
     });
