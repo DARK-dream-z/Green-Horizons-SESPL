@@ -910,6 +910,7 @@ button {
 .featured-projects-section {
   background: #ffffff;
   padding: 28px 0 24px;
+  overflow: hidden;
 }
 
 .featured-projects-section > .container {
@@ -954,7 +955,8 @@ button {
 
 .fp-track-wrapper {
   flex: 1;
-  overflow: visible;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .fp-track {
@@ -4360,5 +4362,365 @@ body {
 
   .pm-surya-logo {
     width: 130px;
+  }
+}
+
+/* Final responsive overrides */
+.solar-cta-strip,
+.site-cta-footer {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+
+  .navbar-content {
+    gap: 16px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .solutions-cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .pm-surya-banner {
+    grid-template-columns: 220px minmax(0, 1fr) 280px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar-content {
+    flex-wrap: nowrap;
+  }
+
+  .brand-logo {
+    min-width: 0;
+  }
+
+  .brand-name {
+    min-width: 0;
+  }
+
+  .nav-links {
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+  }
+
+  .hero-bg-section {
+    background-position: 62% center;
+  }
+
+  .hero-stats-banner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat-banner-item:nth-child(2)::after {
+    display: none;
+  }
+
+  .pm-surya-banner {
+    grid-template-columns: 180px minmax(0, 1fr) 240px;
+  }
+
+  .site-footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .navbar-content {
+    padding: 12px 0;
+  }
+
+  .brand-logo-img {
+    height: 44px;
+    max-width: 52px;
+  }
+
+  .brand-name {
+    display: flex;
+  }
+
+  .brand-line-1 {
+    font-size: 1rem;
+  }
+
+  .brand-line-2 {
+    font-size: 0.72rem;
+  }
+
+  .brand-line-3 {
+    font-size: 0.64rem;
+  }
+
+  .hero-bg-section {
+    padding: 42px 0 136px;
+    background-position: 68% center;
+  }
+
+  .hero-content-left {
+    max-width: 100%;
+  }
+
+  .hero-title-main {
+    font-size: clamp(2rem, 8vw, 2.7rem);
+  }
+
+  .hero-description {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .hero-actions-group {
+    align-items: stretch;
+  }
+
+  .hero-actions-group > * {
+    justify-content: center;
+  }
+
+  .hero-stats-banner-bar {
+    margin-top: -84px;
+  }
+
+  .hero-stats-banner {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .stat-banner-item {
+    gap: 10px;
+    padding: 6px;
+  }
+
+  .stat-banner-item .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-banner-item .stat-label {
+    font-size: 0.68rem;
+    line-height: 1.3;
+  }
+
+  .solutions-cards-grid,
+  .site-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solution-card {
+    min-height: 0;
+  }
+
+  .solution-card-img-wrapper {
+    height: 170px;
+  }
+
+  .pm-surya-banner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .pm-surya-logo-col {
+    min-height: 0;
+    padding: 24px 18px 10px;
+  }
+
+  .pm-surya-logo-col::after {
+    display: none;
+  }
+
+  .pm-surya-content-col {
+    align-items: center;
+    padding: 12px 22px 24px;
+  }
+
+  .pm-surya-img-col {
+    height: 220px;
+  }
+
+  .fp-slider-container {
+    gap: 4px;
+  }
+
+  .fp-track-wrapper {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .fp-card {
+    flex-basis: calc(50% - 8px);
+    min-width: calc(50% - 8px);
+  }
+
+  .fp-card-img-wrapper {
+    height: 180px;
+  }
+
+  .video-thumbnail {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .director-hero,
+  .contact-wrapper,
+  .calc-wrapper {
+    border-radius: 14px;
+  }
+
+  .solar-cta-panel {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 26px 0 22px;
+  }
+
+  .solar-cta-copy,
+  .solar-cta-meta {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .solar-cta-copy h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .cta-heading-second-line {
+    white-space: normal;
+  }
+
+  .solar-cta-meta {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .brand-name {
+    display: none;
+  }
+
+  .hero-bg-section {
+    padding-bottom: 142px;
+    background-position: 72% center;
+  }
+
+  .hero-title-main {
+    font-size: clamp(1.85rem, 10vw, 2.35rem);
+  }
+
+  .hero-badge-pill {
+    max-width: 100%;
+    font-size: 0.7rem;
+    padding: 7px 12px;
+  }
+
+  .hero-stats-banner-bar {
+    margin-top: -92px;
+  }
+
+  .hero-stats-banner {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .stat-banner-item {
+    min-width: 0;
+  }
+
+  .solutions-cards-grid,
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-card-img-wrapper {
+    height: 190px;
+  }
+
+  .fp-card {
+    flex-basis: 100%;
+    min-width: 100%;
+  }
+
+  .fp-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .fp-card-img-wrapper {
+    height: 210px;
+  }
+
+  .solar-cta-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .solar-cta-item {
+    min-width: 0;
+  }
+
+  .solar-cta-item a {
+    overflow-wrap: anywhere;
+  }
+
+  .form-row,
+  .admin-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-container {
+    max-height: calc(100vh - 20px);
+    padding: 18px 14px;
+  }
+
+  .specs-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .scroll-top {
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-actions-group > *,
+  .btn-green-cta,
+  .btn-primary,
+  .btn-gold,
+  .btn-outline {
+    width: 100%;
+  }
+
+  .hero-actions-group {
+    gap: 10px;
+  }
+
+  .stat-icon-box {
+    min-width: 34px;
+    font-size: 1.7rem;
   }
 }
