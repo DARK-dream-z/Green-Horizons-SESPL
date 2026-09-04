@@ -189,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderStateProjects();
   setupStateShowcase();
   initHeaderCarousel();
+  initFeaturedProjectsCarousel();
   initSectionAnimations();
 });
 
@@ -981,6 +982,39 @@ function initHeaderCarousel() {
   render();
 }
 
+// Featured projects carousel
+function initFeaturedProjectsCarousel() {
+  const track = document.getElementById('fpTrack');
+  const wrapper = track?.closest('.fp-track-wrapper');
+  const prev = document.getElementById('fpPrev');
+  const next = document.getElementById('fpNext');
+  if (!track || !wrapper || !prev || !next) return;
+
+  const cards = Array.from(track.children);
+  let idx = 0;
+
+  function render() {
+    const cardWidth = cards[0]?.getBoundingClientRect().width || 0;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    const visibleCards = Math.max(1, Math.floor((wrapper.clientWidth + gap) / (cardWidth + gap)));
+    const maxIndex = Math.max(0, cards.length - visibleCards);
+    idx = Math.min(idx, maxIndex);
+    cards.forEach((card, cardIndex) => {
+      const isVisible = cardIndex >= idx && cardIndex < idx + visibleCards;
+      card.classList.toggle('is-offscreen', !isVisible);
+    });
+    track.style.transform = `translateX(-${idx * (cardWidth + gap)}px)`;
+    prev.disabled = idx === 0;
+    next.disabled = idx === maxIndex;
+  }
+
+  prev.addEventListener('click', () => { idx -= 1; render(); });
+  next.addEventListener('click', () => { idx += 1; render(); });
+
+  window.addEventListener('resize', render);
+  render();
+}
+
 // Video modal functions
 window.openVideoModal = function(videoId) {
   const vc = document.getElementById('videoContainer');
@@ -1008,6 +1042,19 @@ function closeAudioModal() { /* no-op */ }
 
 // Pause marquee on hover
 document.addEventListener('DOMContentLoaded', () => {
+  const scrollTopButton = document.querySelector('.scroll-top');
+  const updateScrollTopVisibility = () => {
+    if (!scrollTopButton) return;
+    const reachedBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
+    scrollTopButton.classList.toggle('is-visible', reachedBottom);
+  };
+
+  if (scrollTopButton) {
+    window.addEventListener('scroll', updateScrollTopVisibility, { passive: true });
+    window.addEventListener('resize', updateScrollTopVisibility);
+    updateScrollTopVisibility();
+  }
+
   const marquee = document.querySelector('.marquee-track');
   if (marquee) {
     marquee.addEventListener('mouseenter', () => marquee.style.animationPlayState = 'paused');
